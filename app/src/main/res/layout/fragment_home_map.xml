@@ -1,0 +1,73 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="alphadev.demo.viewmodel.IRouteViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.HomeMapFragment">
+
+        <fragment
+            android:id="@+id/mapFragment"
+            class="alphadev.demo.fragment.BaseMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@android:layout/simple_gallery_item" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_small"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/colorPrimary"
+                    app:tabIndicatorColor="@color/yellow"
+                    app:tabIndicatorHeight="3dp"
+                    app:tabSelectedTextColor="@color/white"
+                    app:tabTextColor="@color/grey" />
+
+                <TextView
+                    android:id="@+id/searchView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tabLayout"
+                    android:drawableLeft="@drawable/places_ic_search"
+                    android:drawablePadding="@dimen/spacing_normal"
+                    android:hint="@string/pick_a_place"
+                    android:padding="@dimen/spacing_normal"
+                    android:singleLine="true"
+                    android:text="@{viewModel.displayName}"
+                    android:textSize="@dimen/size_title" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <Button
+            android:id="@+id/goButton"
+            android:text="@string/go"
+            android:textColor="@color/white"
+            android:layout_margin="@dimen/spacing_small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:background="@drawable/background_button" />
+
+    </FrameLayout>
+</layout>
+

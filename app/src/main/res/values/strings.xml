@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Demo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pick_a_place">Click here to pick a place</string>
+    <string name="go">Go</string>
+    <string name="start">Start</string>
+    <string name="end">End</string>
+    <string name="routing_failed">Routing failed! Please try again later</string>
+    <string name="please_select_location">Please select locations!</string>
+    <string name="pick_end">Pick end location</string>
+    <string name="pick_start">Pick start location</string>
+</resources>
