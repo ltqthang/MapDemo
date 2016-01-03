@@ -70,19 +70,19 @@ public class RouteViewModel implements IRouteViewModel {
 
     @Override
     public MarkerOptions getStartMarkerOptions() {
-        return createMarkerOption(start, BitmapDescriptorFactory.HUE_GREEN);
+        return createMarkerOption(start, context.getString(R.string.start), BitmapDescriptorFactory.HUE_GREEN);
     }
 
-    private MarkerOptions createMarkerOption(LatLng latLng, float hue) {
+    private MarkerOptions createMarkerOption(LatLng latLng, String title, float hue) {
         return new MarkerOptions()
                 .position(latLng)
-                .title(latLng.toString())
+                .title(title)
                 .icon(BitmapDescriptorFactory.defaultMarker(hue));
     }
 
     @Override
     public MarkerOptions getEndMarkerOptions() {
-        return createMarkerOption(end, BitmapDescriptorFactory.HUE_RED);
+        return createMarkerOption(end, context.getString(R.string.end), BitmapDescriptorFactory.HUE_RED);
     }
 
     @Override
