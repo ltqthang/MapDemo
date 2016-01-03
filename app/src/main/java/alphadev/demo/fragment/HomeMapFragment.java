@@ -231,7 +231,7 @@ public class HomeMapFragment extends Fragment implements GoogleApiClient.Connect
                 case PICK_DEPARTURE_LOCATION_REQUEST_CODE:
                     viewModel.setEnd(place.getLatLng())
                             .subscribeOn(Schedulers.computation())
-                            .observeOn(AndroidSchedulers.mainThread())cd
+                            .observeOn(AndroidSchedulers.mainThread())
                             .subscribe(Actions.empty(), ErrorHandler.logException());
                     mapMarkerController.showStartMarker(viewModel.getEndMarkerOptions());
                     break;
