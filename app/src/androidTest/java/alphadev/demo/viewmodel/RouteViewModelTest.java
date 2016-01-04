@@ -6,7 +6,6 @@ import android.test.AndroidTestCase;
 import com.google.android.gms.maps.model.LatLng;
 
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 
 import alphadev.demo.R;
 import alphadev.demo.util.ILatLngDecoder;
@@ -15,6 +14,7 @@ import rx.Subscriber;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class RouteViewModelTest extends AndroidTestCase {
@@ -23,7 +23,7 @@ public class RouteViewModelTest extends AndroidTestCase {
     @Override
     public void setUp() throws Exception {
         super.setUp();
-        MockitoAnnotations.initMocks(this);
+        latLngDecoder = mock(ILatLngDecoder.class);
     }
 
     public void testGetDisplayName_0() {
