@@ -233,7 +233,7 @@ public class HomeMapFragment extends Fragment implements GoogleApiClient.Connect
                             .subscribeOn(Schedulers.computation())
                             .observeOn(AndroidSchedulers.mainThread())
                             .subscribe(Actions.empty(), ErrorHandler.logException());
-                    mapMarkerController.showStartMarker(viewModel.getEndMarkerOptions());
+                    mapMarkerController.showEndMarker(viewModel.getEndMarkerOptions());
                     break;
             }
             routeController.clearRoute();
